@@ -44,7 +44,7 @@ const SessionComp: React.FunctionComponent<ISessionCompProps> = ({ data }) => {
         <p className="time">
           {data.time.start.format('HH:mm')} - {data.time.end.format('HH:mm')}
         </p>
-        <h4 className={styles.name}>{data.subject.name}</h4>
+        <h3 className={styles.name}>{data.subject.name}</h3>
         <div className={styles.spacer} />
         <p className={styles.type}> {data.sessionType} </p>
       </Content>
