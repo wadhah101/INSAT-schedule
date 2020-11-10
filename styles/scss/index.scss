@@ -1,0 +1,11 @@
+@import './shared.scss';
+
+html {
+  font-size: 16px;
+  @include md {
+    font-size: 14px;
+  }
+  @include xl {
+    font-size: 16px;
+  }
+}
