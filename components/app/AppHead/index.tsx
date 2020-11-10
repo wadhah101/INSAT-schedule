@@ -1,18 +1,14 @@
 import Head from 'next/head'
 import * as React from 'react'
 
-const APP_NAME = 'next-pwa example'
-const APP_DESCRIPTION = 'This is an example of using next-pwa plugin'
-const headDescription = `time table for GL3 insat 2021/2020`
+const APP_NAME = 'Gl3 schedule'
+const APP_DESCRIPTION = 'A schedule for the class gl3 2021-2020 in insat'
 
 const AppHead: React.FunctionComponent = () => {
   return (
     <Head>
       <title>GL3 time table</title>
       <link rel="icon" type="image/webp" href="/favicon.webp" />
-      <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-      <meta name="Description" content={headDescription} />
-
       <meta name="application-name" content={APP_NAME} />
       <meta name="apple-mobile-web-app-capable" content="yes" />
       <meta name="apple-mobile-web-app-status-bar-style" content="default" />
@@ -21,8 +17,10 @@ const AppHead: React.FunctionComponent = () => {
       <meta name="format-detection" content="telephone=no" />
       <meta name="mobile-web-app-capable" content="yes" />
       <meta name="theme-color" content="#FFFFFF" />
-      {/* TIP: set viewport head meta tag in _app.js, otherwise it will show a warning */}
-      {/* <meta name='viewport' content='minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover' /> */}
+      <meta
+        name="viewport"
+        content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
+      />
 
       <link
         rel="apple-touch-icon"
