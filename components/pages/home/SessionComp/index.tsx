@@ -32,8 +32,8 @@ const colorFactory = (s: SchoolSessionView) =>
   `#${md5(s.subject.name).slice(0, 6)}`
 
 const positionFactory = (s: SchoolSessionView) => {
-  const start = (s.time.start.hour - 8) * 4 + s.time.start.minute / 15
-  const end = (s.time.end.hour - 8) * 4 + s.time.end.minute / 15
+  const start = (s.time.start.hour - 8) * 4 + (s.time.start.minute ?? 0) / 15
+  const end = (s.time.end.hour - 8) * 4 + (s.time.end.minute ?? 0) / 15
   return { start, end }
 }
 
@@ -44,8 +44,9 @@ const SessionComp: React.FunctionComponent<ISessionCompProps> = ({ data }) => {
     <Wrapper time={positionFactory(data)} className={styles.wrapper}>
       <Content color={colorFactory(data)} className={styles.content}>
         <p className="time">
-          {twoDigit(data.time.start.hour)}:{twoDigit(data.time.start.minute)} -
-          {twoDigit(data.time.end.hour)}:{twoDigit(data.time.end.minute)}
+          {twoDigit(data.time.start.hour)}:
+          {twoDigit(data.time.start.minute ?? 0)} -
+          {twoDigit(data.time.end.hour)}:{twoDigit(data.time.end.minute ?? 0)}
         </p>
         <h3 className={styles.name}>{data.subject.name}</h3>
         <div className={styles.spacer} />

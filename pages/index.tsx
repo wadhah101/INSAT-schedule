@@ -1,6 +1,6 @@
 import { GetStaticProps, NextPage } from 'next'
 import React from 'react'
-import { TimeTableData } from '../components/pages/home/TimeTable'
+import TimeTable, { TimeTableData } from '../components/pages/home/TimeTable'
 import BasePage from '../components/shared/BasePage'
 import { gl3Schedule } from '../data/gl3-2021-2020/schedule.data'
 import { SchoolSession, SchoolSessionView } from '../models/schoolSession.model'
@@ -13,7 +13,12 @@ interface Props {
 
 export const Home: NextPage<Props> = ({ dd }) => {
   console.debug(dd)
-  return <BasePage>{/* <TableWrapper /> */}</BasePage>
+
+  return (
+    <BasePage>
+      <TimeTable data={dd} />
+    </BasePage>
+  )
 }
 
 export const getStaticProps: GetStaticProps = async (_context) => {
