@@ -12,7 +12,7 @@
     "static": "next build && next export",
     "serve": "serve -S out -l 3000",
     "prod": "next build && next start",
-    "lint": "eslint . --ext ts --ext tsx --ext js"
+    "lint": "eslint . --ext ts --ext tsx"
   },
   "husky": {
     "hooks": {
