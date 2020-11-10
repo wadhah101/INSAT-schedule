@@ -13,3 +13,5 @@ export const architectureMat = new Subject(
   'Programmation Bas niveau',
   AllFiliere.gl3
 )
+export const reseau = new Subject('Ingen. Reseau', AllFiliere.gl3)
+export const rechercheOp = new Subject('Recherche Op.', AllFiliere.gl3)
