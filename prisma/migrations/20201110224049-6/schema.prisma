@@ -3,7 +3,7 @@
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 generator client {
@@ -34,13 +34,4 @@ model FiliereWithLevel {
       filiere Filiere @relation(fields: [filiereId], references: [id])
       filiereId Int
       level Int
-      subject Subject[]
-}
-
-
-model Subject {
-      id    Int   @default(autoincrement()) @id
-      name String 
-      filiereWithLevel FiliereWithLevel @relation(fields: [filiereWithLevelId], references: [id])
-      filiereWithLevelId Int
 }
