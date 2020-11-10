@@ -1,5 +1,5 @@
 export enum SessionType {
-  td,
-  cours,
-  tp,
+  td = 'TD',
+  cours = 'COURS',
+  tp = 'TP',
 }

@@ -16,15 +16,15 @@ const TimeTable: React.FunctionComponent = () => {
   return (
     <div className={styles.wrapperGrid}>
       {days.map((e) => (
-        <div key={e}>
+        <div className={styles.cell} key={e}>
           <h2 className={styles.title} key={e}>
             {e}
           </h2>
-          <ul className={styles.items}>
+          <div className={styles.items}>
             {monday.sessions.map((e, ind) => (
               <SessionComp key={ind} data={e} />
             ))}
-          </ul>
+          </div>
         </div>
       ))}
     </div>

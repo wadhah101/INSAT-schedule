@@ -14,15 +14,17 @@ const Content = styled.div<{ color: string }>`
     background: ${color}0A;
     border-bottom: 2px solid ${color};
     .time {
-      font-size: 0.75rem;
-      /* margin-bottom: 0.125rem; */
+      font-size: 0.8rem;
+      color: ${color}d9;
     }
   `}
 `
 
-const Wrapper = styled.li<{ time: { start: number; end: number } }>`
+const Wrapper = styled.div<{ time: { start: number; end: number } }>`
   ${({ time }) => css`
-    grid-row: ${time.start} / ${time.end};
+    @media (min-width: 768px) {
+      grid-row: ${time.start} / ${time.end};
+    }
   `}
 `
 
@@ -40,9 +42,11 @@ const SessionComp: React.FunctionComponent<ISessionCompProps> = ({ data }) => {
     <Wrapper time={positionFactory(data)} className={styles.wrapper}>
       <Content color={colorFactory(data)} className={styles.content}>
         <p className="time">
-          {data.time.start.format('HH:mm')}-{data.time.end.format('HH:mm')}{' '}
+          {data.time.start.format('HH:mm')} - {data.time.end.format('HH:mm')}
         </p>
-        <h5>{data.subject.name}</h5>
+        <h4 className={styles.name}>{data.subject.name}</h4>
+        <div className={styles.spacer} />
+        <p className={styles.type}> {data.sessionType} </p>
       </Content>
     </Wrapper>
   )

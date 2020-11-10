@@ -8,7 +8,6 @@ import React from 'react'
 import AppHead from '../components/app/AppHead'
 
 import '../styles/scss/index.scss'
-import Footer from '../components/app/Footer'
 
 const MyApp: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
   return (
@@ -16,7 +15,6 @@ const MyApp: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
       <ThemeProvider theme={defaultTheme}>
         <AppHead />
         <Component {...pageProps} />
-        <Footer />
       </ThemeProvider>
     </AnalyticsProvider>
   )
