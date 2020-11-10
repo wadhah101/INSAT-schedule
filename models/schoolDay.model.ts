@@ -1,6 +1,6 @@
-import { Session } from './session.model'
+import { SchoolSession } from './schoolSession.model'
 import { WeekDay } from './WeekDay.enum'
 export interface SchoolDay {
   weekDay: WeekDay
-  sessions: Session[]
+  sessions: SchoolSession[]
 }

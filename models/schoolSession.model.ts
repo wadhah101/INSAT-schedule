@@ -2,7 +2,7 @@ import { SessionType } from './session.enum.model'
 import { Subject } from './subject.model'
 import { Dayjs } from 'dayjs'
 import { Professer } from './professor.model'
-export interface Session {
+export interface SchoolSession {
   time: {
     start: Dayjs
     end: Dayjs

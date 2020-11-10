@@ -1,4 +1,6 @@
 import * as React from 'react'
+import { monday } from '../../../../data/gl3-2021-2020/schedule.data'
+import SessionComp from '../SessionComp'
 import styles from './style.module.scss'
 
 const days = [
@@ -19,14 +21,9 @@ const TimeTable: React.FunctionComponent = () => {
             {e}
           </h2>
           <ul className={styles.items}>
-            {/* {dayItems.map((e, ind) => (
-                <li key={ind} className={styles.item}>
-                  {e.text}
-                </li>
-              ))} */}
-            <li className={styles.demo}>
-              <div className={styles.demoContent}>hemlo</div>
-            </li>
+            {monday.sessions.map((e, ind) => (
+              <SessionComp key={ind} data={e} />
+            ))}
           </ul>
         </div>
       ))}

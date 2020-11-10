@@ -1,0 +1,14 @@
+@import '../../../../styles/scss/shared.scss';
+
+.wrapper {
+  padding: 0.5rem;
+  display: flex;
+  grid-row: 3 / span 6;
+}
+
+.content {
+  padding: 0.5rem;
+  flex: 1;
+  background: rgba($color: blue, $alpha: 0.1);
+  border-bottom: 2px solid blue;
+}
