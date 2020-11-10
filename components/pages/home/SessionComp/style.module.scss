@@ -4,7 +4,7 @@
   padding: 0 0.5rem;
   display: flex;
   font-weight: 500;
-  min-width: 17rem;
+  min-width: 16rem;
   @include md {
     min-width: auto;
   }
@@ -20,7 +20,7 @@
 
 .spacer {
   flex: 1;
-  min-height: 1rem;
+  min-height: 2rem;
   @include md {
     min-height: auto;
   }
