@@ -1,10 +1,9 @@
-import { socialElements } from '../../../data/social.data'
 import styles from './footer.module.scss'
 import * as fa from 'react-icons/fa'
-import { useAnalytics } from 'use-analytics'
+// import { useAnalytics } from 'use-analytics'
 
 const Footer: React.FC = () => {
-  const { track } = useAnalytics()
+  // const { track } = useAnalytics()
 
   return (
     <footer className={styles.footer}>
@@ -23,20 +22,7 @@ const Footer: React.FC = () => {
             follow us
           </h3>
           {/* social media icons */}
-          <div className={styles.social}>
-            {socialElements.map((e) => (
-              <a
-                title={e.name}
-                href={e.href}
-                target="_blank"
-                rel="noopener noreferrer"
-                key={e.href}
-                onClick={() => track(`${e.name} click`)}
-              >
-                <e.icon />
-              </a>
-            ))}
-          </div>
+          <div className={styles.social}></div>
           {/* social media icons */}
           {/* emails */}
           <h3
