@@ -8,7 +8,7 @@ $borderColor: 1px solid
 
 .wrapperGrid {
   display: grid;
-  gap: 2rem;
+  gap: 1.5rem;
   @include md {
     gap: 0;
     grid-template-columns: repeat(6, 1fr);
