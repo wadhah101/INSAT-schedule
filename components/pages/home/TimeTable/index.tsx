@@ -32,8 +32,8 @@ const TimeTable: React.FunctionComponent<Props> = ({ data, group, week }) => {
               .filter((el) => el.time.day === e)
               .filter((el) => (el.time.group ? el.time.group === group : true))
               .filter((el) => (el.time.week ? el.time.week === week : true))
-              .map((e, ind) => (
-                <SessionComp key={ind} data={e} />
+              .map((e) => (
+                <SessionComp key={e.subject.name + e.sessionType} data={e} />
               ))}
           </ul>
         </div>

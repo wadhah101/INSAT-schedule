@@ -23,7 +23,7 @@ const Content = styled.div<{ color: string }>`
 const Wrapper = styled.li<{ time: { start: number; end: number } }>`
   ${({ time }) => css`
     @media (min-width: 768px) {
-      grid-row: ${time.start} / ${time.end};
+      grid-row: ${time.start + 1} / ${time.end + 1};
     }
   `}
 `

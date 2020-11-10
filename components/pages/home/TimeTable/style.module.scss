@@ -36,7 +36,7 @@ $borderColor: 1px solid
     width: auto;
     overflow-x: auto;
     gap: 0;
-    grid-template-rows: repeat(40, 1.25rem);
+    grid-template-rows: repeat(40, minmax(1.25rem, 1fr));
   }
 }
 
