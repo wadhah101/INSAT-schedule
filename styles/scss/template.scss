@@ -1,9 +1,12 @@
 @import './breakpoints.scss';
 
 .baseContainer {
-  max-width: 1200px;
+  max-width: 1600px;
   margin: auto;
   padding: 0rem 1rem;
+  @include md {
+    padding: 0rem 1.5rem;
+  }
 }
 
 .baseTitle {
@@ -15,19 +18,6 @@
   font-weight: 700;
   margin-bottom: 2rem;
   text-transform: uppercase;
-}
-
-.imageGrid {
-  display: grid;
-  column-gap: 3rem;
-  row-gap: 2rem;
-  @include md {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-.greyBg {
-  background: #f1f1f1;
 }
 
 .basePage {
