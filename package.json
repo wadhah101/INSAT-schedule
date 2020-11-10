@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev",
     "generate": "prisma generate",
+    "migrate": "prisma migrate save --experimental && prisma migrate up --experimental && prisma generate",
     "build": "prisma generate && next build",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
