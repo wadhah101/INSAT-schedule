@@ -15,8 +15,8 @@ export const monday: SchoolDay = {
   sessions: [
     {
       time: {
-        start: dayFactory.set({ hour: 8 }),
-        end: dayFactory.set({ hour: 9, minute: 30 }),
+        start: dayFactory.set({ hour: 9, minute: 45 }),
+        end: dayFactory.set({ hour: 11, minute: 15 }),
       },
       subject: complexiteAlgorithme,
       professer: riathRobenna,
