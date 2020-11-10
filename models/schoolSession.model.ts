@@ -1,13 +1,12 @@
 import { WeekDay } from './WeekDay.enum'
 import { SessionType } from './session.enum.model'
 import { Subject } from './subject.model'
-import { Dayjs } from 'dayjs'
 import { Professer } from './professor.model'
 
 export interface SchoolTime {
   day: WeekDay
-  start: Dayjs
-  end: Dayjs
+  start: { hour: number; minute?: number }
+  end: { hour: number; minute?: number }
   group?: number
   week?: 'A' | 'B'
 }

@@ -1,5 +1,4 @@
 import { SchoolSession } from './../../models/schoolSession.model'
-import objectSupport from 'dayjs/plugin/objectSupport'
 import {
   chamkhiMajek,
   demergeEmir,
@@ -21,20 +20,15 @@ import {
   unix,
 } from './../subjects.data'
 import { SessionType } from '../../models/session.enum.model'
-import dayjs from 'dayjs'
 import { WeekDay } from '../../models/WeekDay.enum'
-
-const dayFactory = dayjs.unix(0)
-
-dayjs.extend(objectSupport)
 
 const gl3Cours: SchoolSession[] = [
   {
     time: [
       {
         day: WeekDay.monday,
-        start: dayFactory.set({ hour: 9, minute: 45 }),
-        end: dayFactory.set({ hour: 11, minute: 15 }),
+        start: { hour: 9, minute: 45 },
+        end: { hour: 11, minute: 15 },
       },
     ],
     subject: jee,
@@ -45,8 +39,8 @@ const gl3Cours: SchoolSession[] = [
     time: [
       {
         day: WeekDay.monday,
-        start: dayFactory.set({ hour: 11, minute: 30 }),
-        end: dayFactory.set({ hour: 13, minute: 0 }),
+        start: { hour: 11, minute: 30 },
+        end: { hour: 13, minute: 0 },
       },
     ],
     subject: complexiteAlgorithme,
@@ -59,8 +53,8 @@ const gl3Cours: SchoolSession[] = [
     time: [
       {
         day: WeekDay.thirsday,
-        start: dayFactory.set({ hour: 8, minute: 0 }),
-        end: dayFactory.set({ hour: 9, minute: 30 }),
+        start: { hour: 8 },
+        end: { hour: 9, minute: 30 },
       },
     ],
     subject: architectureMat,
@@ -74,8 +68,8 @@ const gl3Cours: SchoolSession[] = [
     time: [
       {
         day: WeekDay.tuesday,
-        start: dayFactory.set({ hour: 11, minute: 30 }),
-        end: dayFactory.set({ hour: 13 }),
+        start: { hour: 11, minute: 30 },
+        end: { hour: 13 },
       },
     ],
     subject: uml,
@@ -89,8 +83,8 @@ const gl3Cours: SchoolSession[] = [
     time: [
       {
         day: WeekDay.tuesday,
-        start: dayFactory.set({ hour: 9, minute: 45 }),
-        end: dayFactory.set({ hour: 11, minute: 15 }),
+        start: { hour: 9, minute: 45 },
+        end: { hour: 11, minute: 15 },
       },
     ],
     subject: rechercheOp,
@@ -107,14 +101,14 @@ const gl3TP: SchoolSession[] = [
       {
         day: WeekDay.thirsday,
         group: 1,
-        start: dayFactory.set({ hour: 14 }),
-        end: dayFactory.set({ hour: 17 }),
+        start: { hour: 14 },
+        end: { hour: 17 },
       },
       {
         day: WeekDay.monday,
         group: 2,
-        start: dayFactory.set({ hour: 14 }),
-        end: dayFactory.set({ hour: 17 }),
+        start: { hour: 14 },
+        end: { hour: 17 },
       },
     ],
     subject: jee,
@@ -129,14 +123,14 @@ const gl3TP: SchoolSession[] = [
       {
         day: WeekDay.monday,
         group: 1,
-        start: dayFactory.set({ hour: 14 }),
-        end: dayFactory.set({ hour: 18 }),
+        start: { hour: 14 },
+        end: { hour: 18 },
       },
       {
         day: WeekDay.thirsday,
         group: 2,
-        start: dayFactory.set({ hour: 14 }),
-        end: dayFactory.set({ hour: 18 }),
+        start: { hour: 14 },
+        end: { hour: 18 },
       },
     ],
     subject: unix,
@@ -152,15 +146,15 @@ const gl3TP: SchoolSession[] = [
         day: WeekDay.thirsday,
         group: 1,
         week: 'A',
-        start: dayFactory.set({ hour: 9, minute: 45 }),
-        end: dayFactory.set({ hour: 12, minute: 45 }),
+        start: { hour: 9, minute: 45 },
+        end: { hour: 12, minute: 45 },
       },
       {
         day: WeekDay.thirsday,
         group: 2,
         week: 'B',
-        start: dayFactory.set({ hour: 9, minute: 45 }),
-        end: dayFactory.set({ hour: 12, minute: 45 }),
+        start: { hour: 9, minute: 45 },
+        end: { hour: 12, minute: 45 },
       },
     ],
     subject: uml,
@@ -176,15 +170,15 @@ const gl3TP: SchoolSession[] = [
         day: WeekDay.thirsday,
         group: 1,
         week: 'B',
-        start: dayFactory.set({ hour: 9, minute: 45 }),
-        end: dayFactory.set({ hour: 12, minute: 45 }),
+        start: { hour: 9, minute: 45 },
+        end: { hour: 12, minute: 45 },
       },
       {
         day: WeekDay.thirsday,
         group: 2,
         week: 'A',
-        start: dayFactory.set({ hour: 9, minute: 45 }),
-        end: dayFactory.set({ hour: 12, minute: 45 }),
+        start: { hour: 9, minute: 45 },
+        end: { hour: 12, minute: 45 },
       },
     ],
     subject: architectureMat,
@@ -200,15 +194,15 @@ const gl3TP: SchoolSession[] = [
         day: WeekDay.saturday,
         group: 1,
         week: 'A',
-        start: dayFactory.set({ hour: 8 }),
-        end: dayFactory.set({ hour: 12 }),
+        start: { hour: 8 },
+        end: { hour: 12 },
       },
       {
         day: WeekDay.saturday,
         group: 2,
         week: 'B',
-        start: dayFactory.set({ hour: 8 }),
-        end: dayFactory.set({ hour: 12 }),
+        start: { hour: 8 },
+        end: { hour: 12 },
       },
     ],
     subject: reseau,
@@ -224,15 +218,15 @@ const gl3TP: SchoolSession[] = [
         day: WeekDay.saturday,
         group: 1,
         week: 'B',
-        start: dayFactory.set({ hour: 8 }),
-        end: dayFactory.set({ hour: 12 }),
+        start: { hour: 8 },
+        end: { hour: 12 },
       },
       {
         day: WeekDay.saturday,
         group: 2,
         week: 'A',
-        start: dayFactory.set({ hour: 8 }),
-        end: dayFactory.set({ hour: 12 }),
+        start: { hour: 8 },
+        end: { hour: 12 },
       },
     ],
     subject: rechercheOp,

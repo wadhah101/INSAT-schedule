@@ -36,7 +36,7 @@ const TableWrapper: React.FunctionComponent = () => {
         >
           weeek : {week}
         </button>
-        <TimeTable data={data} group={group} week={week} />
+        <TimeTable data={data} />
       </div>
     </section>
   )
