@@ -1,0 +1,385 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateModel",
+      "model": "SchoolPeriod"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolPeriod",
+      "field": "id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "SchoolPeriod",
+          "field": "id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "SchoolPeriod",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "SchoolPeriod",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolPeriod",
+      "field": "hour",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolPeriod",
+      "field": "minute",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolPeriod",
+      "field": "schoolTimeStart",
+      "type": "SchoolTime",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "SchoolPeriod",
+          "field": "schoolTimeStart"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "SchoolPeriod",
+          "field": "schoolTimeStart"
+        },
+        "directive": "relation"
+      },
+      "argument": "",
+      "value": "\"start\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolPeriod",
+      "field": "schoolTimeEnd",
+      "type": "SchoolTime",
+      "arity": "List"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "SchoolPeriod",
+          "field": "schoolTimeEnd"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "SchoolPeriod",
+          "field": "schoolTimeEnd"
+        },
+        "directive": "relation"
+      },
+      "argument": "",
+      "value": "\"end\""
+    },
+    {
+      "tag": "CreateModel",
+      "model": "SchoolTime"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolTime",
+      "field": "id",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "id"
+        },
+        "directive": "id"
+      }
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "id"
+        },
+        "directive": "default"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "id"
+        },
+        "directive": "default"
+      },
+      "argument": "",
+      "value": "autoincrement()"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolTime",
+      "field": "day",
+      "type": "WeekDay",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "day"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "day"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[dayId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "day"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolTime",
+      "field": "dayId",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolTime",
+      "field": "start",
+      "type": "SchoolPeriod",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "start"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "start"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[startId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "start"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "start"
+        },
+        "directive": "relation"
+      },
+      "argument": "name",
+      "value": "\"start\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolTime",
+      "field": "startId",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolTime",
+      "field": "end",
+      "type": "SchoolPeriod",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "end"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "end"
+        },
+        "directive": "relation"
+      },
+      "argument": "fields",
+      "value": "[endId]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "end"
+        },
+        "directive": "relation"
+      },
+      "argument": "references",
+      "value": "[id]"
+    },
+    {
+      "tag": "CreateArgument",
+      "location": {
+        "tag": "Directive",
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "end"
+        },
+        "directive": "relation"
+      },
+      "argument": "name",
+      "value": "\"end\""
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolTime",
+      "field": "endId",
+      "type": "Int",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolTime",
+      "field": "group",
+      "type": "Int",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolTime",
+      "field": "week",
+      "type": "String",
+      "arity": "Required"
+    },
+    {
+      "tag": "CreateField",
+      "model": "WeekDay",
+      "field": "schoolTime",
+      "type": "SchoolTime",
+      "arity": "List"
+    }
+  ]
+}
