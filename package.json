@@ -5,7 +5,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "generate": "prisma generate",
+    "build": "prisma generate && next build",
     "start": "next start",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
@@ -21,6 +22,7 @@
   },
   "dependencies": {
     "@analytics/google-analytics": "^0.5.2",
+    "@prisma/client": "^2.11.0",
     "analytics": "^0.5.5",
     "clsx": "^1.1.1",
     "dayjs": "^1.9.6",
@@ -33,11 +35,11 @@
     "react-player": "^2.6.2",
     "react-portal": "^4.2.1",
     "sass": "^1.29.0",
-    "styled-breakpoints": "^8.1.2",
     "styled-components": "^5.2.1",
     "use-analytics": "^0.0.5"
   },
   "devDependencies": {
+    "@prisma/cli": "^2.11.0",
     "@types/md5": "^2.2.1",
     "@types/node": "^14.14.7",
     "@types/react": "^16.9.56",

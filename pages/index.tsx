@@ -5,6 +5,18 @@ import BasePage from '../components/shared/BasePage'
 import { gl3Schedule } from '../data/gl3-2021-2020/schedule.data'
 import { SchoolSession, SchoolSessionView } from '../models/schoolSession.model'
 import { WeekDay } from '../models/WeekDay.enum'
+import { PrismaClient } from '@prisma/client'
+import {
+  riathRobenna,
+  salwaBenYahia,
+  marouaKessinti,
+  jem3i,
+  demergeEmir,
+  jareyaMouna,
+  kechicheMohamed,
+  chamkhiMajek,
+  soniaBouzidi,
+} from '../data/professors.data'
 
 interface Props {
   timeTableData: TimeTableData[]
@@ -12,8 +24,6 @@ interface Props {
 }
 
 export const Home: NextPage<Props> = ({ dd }) => {
-  console.debug(dd)
-
   return (
     <BasePage>
       <TimeTable data={dd} />
@@ -22,6 +32,29 @@ export const Home: NextPage<Props> = ({ dd }) => {
 }
 
 export const getStaticProps: GetStaticProps = async (_context) => {
+  const prisma = new PrismaClient()
+
+  const prs = [
+    riathRobenna,
+    salwaBenYahia,
+    marouaKessinti,
+    jem3i,
+    demergeEmir,
+    jareyaMouna,
+    kechicheMohamed,
+    chamkhiMajek,
+    soniaBouzidi,
+  ]
+
+  for (let index = 0; index < prs.length; index++) {
+    const element = prs[index]
+    await prisma.professor.create({
+      data: {
+        name: element.name,
+      },
+    })
+  }
+
   const group = 1
   const week = 'A'
 
