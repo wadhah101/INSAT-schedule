@@ -1,3 +1,3 @@
-export interface Professer {
-  name: string
+export class Professer {
+  constructor(public name: string) {}
 }

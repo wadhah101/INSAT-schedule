@@ -1,18 +1,25 @@
 import * as React from 'react'
-import { monday } from '../../../../data/gl3-2021-2020/schedule.data'
+import { SchoolSessionView } from '../../../../models/schoolSession.model'
+import { WeekDay } from '../../../../models/WeekDay.enum'
 import SessionComp from '../SessionComp'
 import styles from './style.module.scss'
 
-const days = [
-  'monday',
-  'tuesday',
-  'wednesday',
-  'thursday',
-  'friday',
-  'saturday',
+const days: WeekDay[] = [
+  WeekDay.monday,
+  WeekDay.tuesday,
+  WeekDay.wednesday,
+  WeekDay.thirsday,
+  WeekDay.friday,
+  WeekDay.saturday,
 ]
 
-const TimeTable: React.FunctionComponent = () => {
+interface Props {
+  data: SchoolSessionView[]
+  group: number
+  week: 'A' | 'B'
+}
+
+const TimeTable: React.FunctionComponent<Props> = ({ data, group, week }) => {
   return (
     <div className={styles.wrapperGrid}>
       {days.map((e) => (
@@ -20,11 +27,15 @@ const TimeTable: React.FunctionComponent = () => {
           <h2 className={styles.title} key={e}>
             {e}
           </h2>
-          <div className={styles.items}>
-            {monday.sessions.map((e, ind) => (
-              <SessionComp key={ind} data={e} />
-            ))}
-          </div>
+          <ul className={styles.items}>
+            {data
+              .filter((el) => el.time.day === e)
+              .filter((el) => (el.time.group ? el.time.group === group : true))
+              .filter((el) => (el.time.week ? el.time.week === week : true))
+              .map((e, ind) => (
+                <SessionComp key={ind} data={e} />
+              ))}
+          </ul>
         </div>
       ))}
     </div>
