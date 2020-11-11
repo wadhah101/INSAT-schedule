@@ -3,7 +3,7 @@
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 generator client {
@@ -57,8 +57,9 @@ model SchoolTime {
   dayId   Int
   start   SchoolPeriod @relation(fields: [startId], references: [id], name: "start")
   startId Int
-  end     SchoolPeriod @relation(fields: [endId], references: [id], name: "end")
-  endId   Int
-  group   Int?
-  week    String?
+
+  end   SchoolPeriod @relation(fields: [endId], references: [id], name: "end")
+  endId Int
+  group Int?
+  week  String?
 }
