@@ -1,13 +1,13 @@
 import Head from 'next/head'
 import * as React from 'react'
 
-const APP_NAME = 'Gl3 schedule'
-const APP_DESCRIPTION = 'A schedule for the class gl3 2021-2020 in insat'
+const APP_NAME = 'INSAT schedule'
+const APP_DESCRIPTION = 'A schedule for insat 2021-2020'
 
 const AppHead: React.FunctionComponent = () => {
   return (
     <Head>
-      <title>GL3 time table</title>
+      <title>INSAT schedule</title>
       <link rel="icon" type="image/webp" href="icons/icon.svg" />
       <meta name="application-name" content={APP_NAME} />
       <meta name="apple-mobile-web-app-capable" content="yes" />

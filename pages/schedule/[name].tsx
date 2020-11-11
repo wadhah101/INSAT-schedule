@@ -24,8 +24,19 @@ export const schedules: NextPage<Props> = ({
 
 // TODO
 export const getStaticPaths: GetStaticPaths<{ name: string }> = async () => {
+  const prisma = new PrismaClient()
+  const data = await prisma.filiereWithLevel.findMany({
+    include: { filiere: true },
+  })
+
+  const paths = data.flatMap((e) =>
+    new Array(e.groupCount).fill(0).map((_, ind) => ({
+      params: { name: `${e.filiere.abbreviation}-${e.level}-${ind + 1}` },
+    }))
+  )
+
   return {
-    paths: [{ params: { name: 'GL-3-1' } }, { params: { name: 'GL-3-2' } }],
+    paths,
     fallback: false,
   }
 }
