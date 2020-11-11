@@ -1,6 +1,6 @@
 {
-    "name": "schedule-pwa",
-    "short_name": "next-pwa",
+    "name": "Insat Schedule",
+    "short_name": "Insat Schedule",
     "display": "standalone",
     "orientation": "portrait",
     "theme_color": "#FFFFFF",
