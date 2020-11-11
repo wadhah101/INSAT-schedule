@@ -1,7 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import React from 'react'
-import TimeTable from '../../components/pages/home/TimeTable'
 import ScheduleSwiper from '../../components/pages/schedule/ScheduleSwiper'
 import BasePage from '../../components/shared/BasePage'
 import { getSchedule } from '../../lib/functions.utils'
@@ -18,14 +17,12 @@ export const schedules: NextPage<Props> = ({
 }) => {
   return (
     <BasePage>
-      <ScheduleSwiper>
-        <TimeTable data={timeTableDataA} />
-        <TimeTable data={timeTableDataB} />
-      </ScheduleSwiper>
+      <ScheduleSwiper A={timeTableDataA} B={timeTableDataB} />
     </BasePage>
   )
 }
 
+// TODO
 export const getStaticPaths: GetStaticPaths<{ name: string }> = async () => {
   return {
     paths: [{ params: { name: 'GL-3-1' } }, { params: { name: 'GL-3-2' } }],
