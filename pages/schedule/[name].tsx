@@ -22,7 +22,6 @@ export const schedules: NextPage<Props> = ({
   )
 }
 
-// TODO
 export const getStaticPaths: GetStaticPaths<{ name: string }> = async () => {
   const prisma = new PrismaClient()
   const data = await prisma.filiereWithLevel.findMany({

@@ -6,6 +6,8 @@ import { PrismaClient } from '@prisma/client'
 import Link from 'next/link'
 import styles from '../styles/home.module.scss'
 
+// TODO interface for adding  easily
+
 interface Props {
   data: { name: string }[]
 }
