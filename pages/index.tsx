@@ -1,9 +1,10 @@
 import { PrismaClient } from '@prisma/client'
 import { GetStaticProps, NextPage } from 'next'
 import React from 'react'
-import TimeTable, { TimeTableData } from '../components/pages/home/TimeTable'
+import TimeTable from '../components/pages/home/TimeTable'
 import BasePage from '../components/shared/BasePage'
 import { transformer } from '../lib/functions.utils'
+import { TimeTableData } from '../models/scholSession.full.model'
 
 const group = 1
 const week = 'A'

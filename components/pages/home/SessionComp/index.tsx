@@ -2,7 +2,7 @@ import * as React from 'react'
 import styles from './style.module.scss'
 import md5 from 'md5'
 import styled, { css } from 'styled-components'
-import { SchoolSessionView } from '../TimeTable'
+import { SchoolSessionView } from '../../../../models/scholSession.full.model'
 
 interface ISessionCompProps {
   data: SchoolSessionView

@@ -1,5 +1,7 @@
-import { SchoolSessionView } from '../components/pages/home/TimeTable'
-import { FullSchoolSession } from '../models/scholSession.full.model'
+import {
+  FullSchoolSession,
+  SchoolSessionView,
+} from '../models/scholSession.full.model'
 
 export const transformer = (s: FullSchoolSession): SchoolSessionView[] => {
   return s.SchoolTime.map((e) => ({

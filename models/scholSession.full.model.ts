@@ -18,3 +18,15 @@ export declare type FullSchoolSession = SchoolSession & {
   Professor: Professor
   sessionType: SessionType
 }
+
+export declare type SchoolSessionView = {
+  time: SchoolTime & { day: WeekDay; start: SchoolPeriod; end: SchoolPeriod }
+  sessionType: SessionType
+  subject: Subject
+  id: number
+}
+
+export declare type TimeTableData = {
+  day: WeekDay
+  schoolSessionViews: SchoolSessionView[]
+}

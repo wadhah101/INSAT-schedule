@@ -1,25 +1,7 @@
-import {
-  SchoolPeriod,
-  SchoolTime,
-  SessionType,
-  Subject,
-  WeekDay,
-} from '@prisma/client'
 import * as React from 'react'
+import { TimeTableData } from '../../../../models/scholSession.full.model'
 import SessionComp from '../SessionComp'
 import styles from './style.module.scss'
-
-export interface SchoolSessionView {
-  time: SchoolTime & { day: WeekDay; start: SchoolPeriod; end: SchoolPeriod }
-  sessionType: SessionType
-  subject: Subject
-  id: number
-}
-
-export interface TimeTableData {
-  day: WeekDay
-  schoolSessionViews: SchoolSessionView[]
-}
 
 interface Props {
   data: TimeTableData[]
