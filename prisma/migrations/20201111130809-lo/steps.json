@@ -1,0 +1,53 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "DeleteModel",
+      "model": "SchoolPeriod"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "SchoolTime",
+      "field": "startId"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "SchoolTime",
+      "field": "endId"
+    },
+    {
+      "tag": "UpdateField",
+      "model": "SchoolTime",
+      "field": "start",
+      "type": "DateTime"
+    },
+    {
+      "tag": "DeleteDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "start"
+        },
+        "directive": "relation"
+      }
+    },
+    {
+      "tag": "UpdateField",
+      "model": "SchoolTime",
+      "field": "end",
+      "type": "DateTime"
+    },
+    {
+      "tag": "DeleteDirective",
+      "location": {
+        "path": {
+          "tag": "Field",
+          "model": "SchoolTime",
+          "field": "end"
+        },
+        "directive": "relation"
+      }
+    }
+  ]
+}

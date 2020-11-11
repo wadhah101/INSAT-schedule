@@ -19,24 +19,27 @@ const ScheduleSwiper: React.FunctionComponent = ({ children }) => {
   return (
     <div className={styles.wrapper}>
       <div className={styles.baseContainer}>
-        <div className={styles.t}>
-          <div className={styles.headings}>
-            <h2
-              onClick={() => slideSetter(0)}
-              className={clsx(styles.selector, {
-                [styles.active]: currentSlide === 0,
-              })}
-            >
-              A
-            </h2>
-            <h2
-              onClick={() => slideSetter(1)}
-              className={clsx(styles.selector, {
-                [styles.active]: currentSlide === 1,
-              })}
-            >
-              B
-            </h2>
+        <div className={styles.r}>
+          <h1> </h1>
+          <div className={styles.t}>
+            <div className={styles.headings}>
+              <h2
+                onClick={() => slideSetter(0)}
+                className={clsx(styles.selector, {
+                  [styles.active]: currentSlide === 0,
+                })}
+              >
+                A
+              </h2>
+              <h2
+                onClick={() => slideSetter(1)}
+                className={clsx(styles.selector, {
+                  [styles.active]: currentSlide === 1,
+                })}
+              >
+                B
+              </h2>
+            </div>
           </div>
         </div>
 

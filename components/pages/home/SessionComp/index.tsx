@@ -2,10 +2,10 @@ import * as React from 'react'
 import styles from './style.module.scss'
 import md5 from 'md5'
 import styled, { css } from 'styled-components'
-import { SchoolSessionView } from '../../../../models/scholSession.full.model'
+import { SchoolSessionPureData } from '../../../../models/scholSession.full.model'
 
 interface ISessionCompProps {
-  data: SchoolSessionView
+  data: SchoolSessionPureData
 }
 
 const Content = styled.div<{ color: string }>`
@@ -28,12 +28,16 @@ const Wrapper = styled.li<{ time: { start: number; end: number } }>`
   `}
 `
 
-const colorFactory = (s: SchoolSessionView) =>
+const colorFactory = (s: SchoolSessionPureData) =>
   `#${md5(s.subject.name).slice(0, 6)}`
 
-const positionFactory = (s: SchoolSessionView) => {
-  const start = (s.time.start.hour - 8) * 4 + (s.time.start.minute ?? 0) / 15
-  const end = (s.time.end.hour - 8) * 4 + (s.time.end.minute ?? 0) / 15
+const positionFactory = (s: SchoolSessionPureData) => {
+  const start =
+    (new Date(s.time.start).getHours() - 8) * 4 +
+    new Date(s.time.start).getMinutes() / 15
+  const end =
+    (new Date(s.time.end).getHours() - 8) * 4 +
+    new Date(s.time.end).getMinutes() / 15
   return { start, end }
 }
 
@@ -44,9 +48,10 @@ const SessionComp: React.FunctionComponent<ISessionCompProps> = ({ data }) => {
     <Wrapper time={positionFactory(data)} className={styles.wrapper}>
       <Content color={colorFactory(data)} className={styles.content}>
         <p className="time">
-          {twoDigit(data.time.start.hour)}:
-          {twoDigit(data.time.start.minute ?? 0)} -
-          {twoDigit(data.time.end.hour)}:{twoDigit(data.time.end.minute ?? 0)}
+          {twoDigit(new Date(data.time.start).getHours())}:
+          {twoDigit(new Date(data.time.start).getMinutes())} -
+          {twoDigit(new Date(data.time.end).getHours())}:
+          {twoDigit(new Date(data.time.end).getMinutes())}
         </p>
         <h3 className={styles.name}>{data.subject.name}</h3>
         <div className={styles.spacer} />
