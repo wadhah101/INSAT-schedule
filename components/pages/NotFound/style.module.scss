@@ -1,0 +1,15 @@
+@import '../../../styles/scss/shared.scss';
+
+.wrapper {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+}
+
+.text {
+  text-align: center;
+  font-size: 4rem;
+  @include md {
+    font-size: 6rem;
+  }
+}
