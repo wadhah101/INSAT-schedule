@@ -6,6 +6,7 @@ import { AnalyticsProvider } from 'use-analytics'
 import { defaultAnalytics } from '../lib/analytics'
 import React from 'react'
 import AppHead from '../components/app/AppHead'
+import 'swiper/swiper.scss'
 
 import '../styles/scss/index.scss'
 

@@ -2,6 +2,7 @@ import { PrismaClient } from '@prisma/client'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import React from 'react'
 import TimeTable from '../../components/pages/home/TimeTable'
+import ScheduleSwiper from '../../components/pages/schedule'
 import BasePage from '../../components/shared/BasePage'
 import { getSchedule } from '../../lib/functions.utils'
 import { TimeTableData } from '../../models/scholSession.full.model'
@@ -17,9 +18,10 @@ export const schedules: NextPage<Props> = ({
 }) => {
   return (
     <BasePage>
-      <TimeTable data={timeTableDataA} />
-      <h1> week B </h1>
-      <TimeTable data={timeTableDataB} />
+      <ScheduleSwiper>
+        <TimeTable data={timeTableDataA} />
+        <TimeTable data={timeTableDataB} />
+      </ScheduleSwiper>
     </BasePage>
   )
 }
