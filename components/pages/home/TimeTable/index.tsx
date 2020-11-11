@@ -10,9 +10,10 @@ import SessionComp from '../SessionComp'
 import styles from './style.module.scss'
 
 export interface SchoolSessionView {
-  time: SchoolTime & { start: SchoolPeriod; end: SchoolPeriod }
+  time: SchoolTime & { day: WeekDay; start: SchoolPeriod; end: SchoolPeriod }
   sessionType: SessionType
   subject: Subject
+  id: number
 }
 
 export interface TimeTableData {
@@ -28,11 +29,11 @@ const TimeTable: React.FunctionComponent<Props> = ({ data }) => {
   return (
     <div className={styles.wrapperGrid}>
       {data.map((e) => (
-        <div className={styles.cell} key={e.day.name}>
-          <h2 className={styles.title}>{e.day}</h2>
+        <div className={styles.cell} key={e.day.id}>
+          <h2 className={styles.title}>{e.day.name}</h2>
           <ul className={styles.items}>
             {e.schoolSessionViews.map((el) => (
-              <SessionComp key={el.subject.name + el.sessionType} data={el} />
+              <SessionComp key={el.id} data={el} />
             ))}
           </ul>
         </div>

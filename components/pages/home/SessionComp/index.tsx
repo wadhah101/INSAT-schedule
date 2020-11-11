@@ -50,7 +50,7 @@ const SessionComp: React.FunctionComponent<ISessionCompProps> = ({ data }) => {
         </p>
         <h3 className={styles.name}>{data.subject.name}</h3>
         <div className={styles.spacer} />
-        <p className={styles.type}> {data.sessionType} </p>
+        <p className={styles.type}> {data.sessionType.name} </p>
       </Content>
     </Wrapper>
   )
