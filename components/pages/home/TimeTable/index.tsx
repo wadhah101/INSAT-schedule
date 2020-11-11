@@ -1,8 +1,19 @@
+import {
+  SchoolPeriod,
+  SchoolTime,
+  SessionType,
+  Subject,
+  WeekDay,
+} from '@prisma/client'
 import * as React from 'react'
-import { SchoolSessionView } from '../../../../models/schoolSession.model'
-import { WeekDay } from '../../../../models/WeekDay.enum'
 import SessionComp from '../SessionComp'
 import styles from './style.module.scss'
+
+export interface SchoolSessionView {
+  time: SchoolTime & { start: SchoolPeriod; end: SchoolPeriod }
+  sessionType: SessionType
+  subject: Subject
+}
 
 export interface TimeTableData {
   day: WeekDay
@@ -17,7 +28,7 @@ const TimeTable: React.FunctionComponent<Props> = ({ data }) => {
   return (
     <div className={styles.wrapperGrid}>
       {data.map((e) => (
-        <div className={styles.cell} key={e.day}>
+        <div className={styles.cell} key={e.day.name}>
           <h2 className={styles.title}>{e.day}</h2>
           <ul className={styles.items}>
             {e.schoolSessionViews.map((el) => (

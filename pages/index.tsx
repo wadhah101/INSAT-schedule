@@ -1,3 +1,4 @@
+import { PrismaClient } from '@prisma/client'
 import { GetStaticProps, NextPage } from 'next'
 import React from 'react'
 import { TimeTableData } from '../components/pages/home/TimeTable'
@@ -16,9 +17,21 @@ export const getStaticProps: GetStaticProps = async (_context) => {
   // const group = 1
   // const week = 'A'
 
-  // const prisma = new PrismaClient()
+  const prisma = new PrismaClient()
+
+  const data = await prisma.schoolSession.findMany({
+    include: {
+      SchoolTime: true,
+      subject: true,
+      Professor: true,
+      sessionType: true,
+    },
+  })
+
+  console.debug(JSON.stringify(data))
 
   // const transformer = (s: SchoolSession): SchoolSessionView[] => {
+  //   s
   //   return s.time.map((e) => ({
   //     time: e,
   //     sessionType: s.sessionType,
@@ -26,7 +39,7 @@ export const getStaticProps: GetStaticProps = async (_context) => {
   //   }))
   // }
 
-  // const faltenedData = gl3Schedule.flatMap(transformer)
+  // const faltenedData = data.flatMap(transformer)
 
   // const times = faltenedData.map((e) => e.time)
 
