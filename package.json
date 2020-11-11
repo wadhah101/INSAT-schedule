@@ -11,6 +11,7 @@
     "migrate": "prisma migrate up --experimental && prisma generate",
     "build": "prisma generate && next build",
     "start": "next start",
+    "studio": "prisma studio",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "serve": "serve -S out -l 3000",
