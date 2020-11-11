@@ -3,7 +3,7 @@
 
 datasource db {
   provider = "sqlite"
-  url      = env("DATABASE_URL")
+  url = "***"
 }
 
 generator client {
@@ -67,19 +67,12 @@ model SchoolTime {
   schoolSessionId Int?
 }
 
-model SessionType {
-  id            Int             @id @default(autoincrement())
-  name          String
-  SchoolSession SchoolSession[]
-}
-
 model SchoolSession {
-  id            Int          @id @default(autoincrement())
-  SchoolTime    SchoolTime[]
-  subject       Subject      @relation(fields: [subjectId], references: [id])
-  Professor     Professor    @relation(fields: [professorId], references: [id])
-  subjectId     Int
-  professorId   Int
-  sessionType   SessionType  @relation(fields: [sessionTypeId], references: [id])
-  sessionTypeId Int
+  id          Int          @id @default(autoincrement())
+  SchoolTime  SchoolTime[]
+  subject     Subject      @relation(fields: [subjectId], references: [id])
+  Professor   Professor    @relation(fields: [professorId], references: [id])
+  sessionType String
+  subjectId   Int
+  professorId Int
 }
