@@ -1,6 +1,8 @@
+import { PrismaClient } from '@prisma/client'
 import {
   FullSchoolSession,
   SchoolSessionView,
+  TimeTableData,
 } from '../models/scholSession.full.model'
 
 export const transformer = (s: FullSchoolSession): SchoolSessionView[] => {
@@ -10,6 +12,44 @@ export const transformer = (s: FullSchoolSession): SchoolSessionView[] => {
     subject: s.subject,
     id: s.id,
   }))
+}
+
+export const getSchedule = (prisma: PrismaClient) => async (
+  f: { abbreviation: string; level: number },
+  group: number,
+  week: 'A' | 'B'
+): Promise<TimeTableData[]> => {
+  // get days
+  const days = await prisma.weekDay.findMany({})
+
+  // get schedule data
+  const rawData = await prisma.schoolSession.findMany({
+    include: {
+      SchoolTime: { include: { day: true, start: true, end: true } },
+      subject: true,
+      Professor: true,
+      sessionType: true,
+    },
+    where: {
+      subject: {
+        filiereWithLevel: {
+          level: f.level,
+          filiere: { abbreviation: f.abbreviation },
+        },
+      },
+    },
+  })
+
+  const faltenedData = rawData.flatMap(transformer)
+
+  const timeTableData: TimeTableData[] = days.map((e) => ({
+    day: e,
+    schoolSessionViews: faltenedData
+      .filter((el) => el.time.day.id === e.id)
+      .filter((el) => (el.time.group ? el.time.group === group : true))
+      .filter((el) => (el.time.week ? el.time.week === week : true)),
+  }))
+  return timeTableData
 }
 
 // const times = faltenedData.map((e) => e.time)
