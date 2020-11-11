@@ -30,7 +30,7 @@ const Wrapper = styled.li<{ time: { start: number; end: number } }>`
 `
 
 const colorFactory = (s: SchoolSessionPureData) =>
-  `#${md5(s.subject.name).slice(0, 6)}`
+  `#${md5(`${s.subject.name}`).slice(0, 6)}`
 
 const positionFactory = (startTime: Dayjs, endTime: Dayjs) => {
   const start = (startTime.hour() - 8) * 4 + startTime.minute() / 15
