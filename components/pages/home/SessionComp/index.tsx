@@ -55,7 +55,10 @@ const SessionComp: React.FunctionComponent<ISessionCompProps> = ({ data }) => {
       time={positionFactory(temp.time.start, temp.time.end)}
       className={styles.wrapper}
     >
-      <Content color={colorFactory(data)} className={styles.content}>
+      <Content
+        color={temp.subject.color ?? colorFactory(data)}
+        className={styles.content}
+      >
         <p className="time">
           {temp.time.start.format('HH:mm')} - {temp.time.end.format('HH:mm')}
         </p>
