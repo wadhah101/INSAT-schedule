@@ -4,7 +4,7 @@
   "license": "MIT",
   "version": "1.0.0",
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 3500",
     "generate": "prisma generate",
     "postinstall": "prisma generate",
     "pre-migrate": "prisma migrate save --experimental",

@@ -1,5 +1,7 @@
 @import '../../../../styles/scss/shared.scss';
 
+$transitionDuartion: 0.5s;
+
 .wrapper {
   padding: 0.25rem 0.5rem;
   display: flex;
@@ -8,9 +10,10 @@
   @include md {
     min-width: auto;
   }
-  transition: background 1s ease;
   * {
-    transition: color 1s ease;
+    transition: color $transitionDuartion ease,
+      background-color $transitionDuartion ease,
+      border-color $transitionDuartion ease;
   }
 }
 
