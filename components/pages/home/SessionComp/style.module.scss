@@ -8,9 +8,9 @@
   @include md {
     min-width: auto;
   }
-  transition: all 1s ease;
+  transition: background 1s ease;
   * {
-    transition: all 1s ease;
+    transition: color 1s ease;
   }
 }
 
