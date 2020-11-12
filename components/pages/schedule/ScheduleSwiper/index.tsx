@@ -1,5 +1,4 @@
-import clsx from 'clsx'
-import React, { useState } from 'react'
+import React from 'react'
 import { TimeTableData } from '../../../../models/scholSession.full.model'
 import TimeTable from '../../home/TimeTable'
 import styles from './style.module.scss'
@@ -9,13 +8,13 @@ interface Props {
   B: TimeTableData[]
 }
 
-const ScheduleSwiper: React.FunctionComponent<Props> = ({ A, B }) => {
-  const [currentSlide, setCurrentSlide] = useState(0)
+const ScheduleSwiper: React.FunctionComponent<Props> = ({ A }) => {
+  // const [currentSlide, setCurrentSlide] = useState(0)
 
   return (
     <div className={styles.wrapper}>
       <div className={styles.baseContainer}>
-        <div className={styles.r}>
+        {/* <div className={styles.r}>
           <h1> </h1>
           <div className={styles.t}>
             <div className={styles.headings}>
@@ -37,9 +36,9 @@ const ScheduleSwiper: React.FunctionComponent<Props> = ({ A, B }) => {
               </h2>
             </div>
           </div>
-        </div>
+        </div> */}
 
-        <TimeTable data={currentSlide === 0 ? A : B} />
+        <TimeTable data={A} />
       </div>
     </div>
   )

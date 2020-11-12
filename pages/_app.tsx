@@ -7,12 +7,14 @@ import { defaultAnalytics } from '../lib/analytics'
 import React from 'react'
 import AppHead from '../components/app/AppHead'
 import '../styles/scss/index.scss'
+import Header from '../components/app/Header'
 
 const MyApp: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
   return (
     <AnalyticsProvider instance={defaultAnalytics}>
       <ThemeProvider theme={defaultTheme}>
         <AppHead />
+        <Header />
         <Component {...pageProps} />
       </ThemeProvider>
     </AnalyticsProvider>
