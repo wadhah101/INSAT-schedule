@@ -16,7 +16,7 @@ const TimeTable: React.FunctionComponent<Props> = ({ data }) => {
           <ul className={styles.items}>
             {e.schoolSessionViews.map((el) => (
               <SessionComp
-                key={`${el.time.start}-${el.time.end}-${el.time.day.id}`}
+                key={`${el.time.start}-${el.time.day.id}`}
                 data={el}
               />
             ))}
