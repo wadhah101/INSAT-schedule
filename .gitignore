@@ -36,3 +36,4 @@ yarn-error.log*
 
 **/public/workbox-*.js
 **/public/sw.js
+prisma/.env
