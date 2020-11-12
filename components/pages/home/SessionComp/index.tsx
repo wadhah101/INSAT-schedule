@@ -12,6 +12,9 @@ interface ISessionCompProps {
 const Content = styled.div<{ color: string }>`
   ${({ color }) => css`
     color: ${color};
+    * {
+      color: ${color};
+    }
     background: ${color}0A;
     border-bottom: 2px solid ${color};
     .time {

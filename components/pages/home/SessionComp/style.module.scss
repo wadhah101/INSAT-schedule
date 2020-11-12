@@ -8,6 +8,10 @@
   @include md {
     min-width: auto;
   }
+  transition: all 1s ease;
+  * {
+    transition: all 1s ease;
+  }
 }
 
 .content {
