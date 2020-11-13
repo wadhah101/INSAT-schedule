@@ -18,7 +18,7 @@ export const transformer = (s: FullSchoolSession): SchoolSessionPureData[] =>
   }))
 
 export const getSchedule = (prisma: PrismaClient) => async (
-  f: { abbreviation: string; level: number },
+  f: { abv: string; level: number },
   group: number,
   week: 'A' | 'B'
 ): Promise<TimeTableData[]> => {
@@ -37,7 +37,7 @@ export const getSchedule = (prisma: PrismaClient) => async (
       subject: {
         filiereWithLevel: {
           level: f.level,
-          filiere: { abbreviation: f.abbreviation },
+          filiere: { abbreviation: f.abv },
         },
       },
     },

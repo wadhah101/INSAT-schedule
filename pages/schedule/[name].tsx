@@ -1,7 +1,7 @@
 import { PrismaClient } from '@prisma/client'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import React from 'react'
-import ScheduleSwiper from '../../components/pages/schedule/ScheduleSwiper'
+import TimeTableContainer from '../../components/pages/schedule/TimeTableContainer'
 import BasePage from '../../components/shared/BasePage'
 import { getSchedule } from '../../lib/functions.utils'
 import { TimeTableData } from '../../models/scholSession.full.model'
@@ -17,7 +17,7 @@ export const schedules: NextPage<Props> = ({
 }) => {
   return (
     <BasePage>
-      <ScheduleSwiper A={timeTableDataA} B={timeTableDataB} />
+      <TimeTableContainer A={timeTableDataA} B={timeTableDataB} />
     </BasePage>
   )
 }
@@ -53,19 +53,23 @@ export const getStaticProps: GetStaticProps<Props, { name: string }> = async (
   if (!level) throw 'level is not a number'
   if (!group) throw 'group is not a number'
 
-  const reqA = getSchedule(prisma)({ level, abbreviation }, group, 'A').catch(
-    (e) => {
-      console.error(e)
-      return []
-    }
-  )
+  const reqA = getSchedule(prisma)(
+    { level, abv: abbreviation },
+    group,
+    'A'
+  ).catch((e) => {
+    console.error(e)
+    return []
+  })
 
-  const reqB = getSchedule(prisma)({ level, abbreviation }, group, 'B').catch(
-    (e) => {
-      console.error(e)
-      return []
-    }
-  )
+  const reqB = getSchedule(prisma)(
+    { level, abv: abbreviation },
+    group,
+    'B'
+  ).catch((e) => {
+    console.error(e)
+    return []
+  })
   return {
     props: {
       timeTableDataA: await reqA,
