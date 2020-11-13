@@ -4,6 +4,11 @@ import md5 from 'md5'
 import styled, { css } from 'styled-components'
 import { SchoolSessionPureData } from '../../../../models/scholSession.full.model'
 import dayjs, { Dayjs } from 'dayjs'
+import utc from 'dayjs/plugin/utc'
+import timezone from 'dayjs/plugin/timezone'
+dayjs.extend(utc)
+dayjs.extend(timezone)
+dayjs.tz.setDefault('Africa/Tunis')
 
 interface ISessionCompProps {
   data: SchoolSessionPureData

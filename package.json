@@ -10,7 +10,7 @@
     "pre-migrate": "prisma migrate save --experimental",
     "migrate": "prisma migrate up --experimental && prisma generate",
     "build": "yarn migrate && next build",
-    "start": "next start",
+    "start": "next start -p 3500",
     "studio": "prisma studio",
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
