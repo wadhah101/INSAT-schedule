@@ -9,7 +9,7 @@
     "postinstall": "prisma generate",
     "pre-migrate": "prisma migrate save --experimental",
     "migrate": "prisma migrate up --experimental && prisma generate",
-    "build": "prisma generate && next build",
+    "build": "yarn migrate && next build",
     "start": "next start",
     "studio": "prisma studio",
     "type-check": "tsc --pretty --noEmit",
