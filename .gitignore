@@ -40,3 +40,4 @@ prisma/.env
 
 /db/
 /pg-data/
+.env
