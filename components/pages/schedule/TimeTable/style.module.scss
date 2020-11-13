@@ -32,6 +32,7 @@ $borderColor: 1px solid
   display: grid;
   grid-auto-flow: column dense;
   overflow-x: scroll;
+  gap: 0.75rem;
   @include md {
     width: auto;
     overflow-x: auto;
