@@ -1,22 +1,30 @@
 import '../styles/index.css'
 import type { AppProps } from 'next/app'
-import { ThemeProvider } from 'styled-components'
-import { defaultTheme } from '../styles/theme'
 import { AnalyticsProvider } from 'use-analytics'
 import { defaultAnalytics } from '../lib/analytics'
-import React from 'react'
+import React, { useState } from 'react'
 import AppHead from '../components/app/AppHead'
 import '../styles/scss/index.scss'
 import Header from '../components/app/Header'
 
+interface GlobalState {
+  week: string
+  setWeek: React.Dispatch<React.SetStateAction<string>>
+}
+
+export const WeekContext = React.createContext<GlobalState>({
+  week: 'A',
+  setWeek: () => null,
+})
 const MyApp: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
+  const [week, setWeek] = useState('A')
   return (
     <AnalyticsProvider instance={defaultAnalytics}>
-      <ThemeProvider theme={defaultTheme}>
-        <AppHead />
+      <WeekContext.Provider value={{ week, setWeek }}>
         <Header />
         <Component {...pageProps} />
-      </ThemeProvider>
+      </WeekContext.Provider>
+      <AppHead />
     </AnalyticsProvider>
   )
 }

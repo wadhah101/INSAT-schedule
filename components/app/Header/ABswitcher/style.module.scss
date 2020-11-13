@@ -1,0 +1,36 @@
+@import '../../../../styles/scss/shared.scss';
+
+$theme: #000000;
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-radius: 2rem;
+  overflow: hidden;
+  cursor: pointer;
+  color: $theme;
+  position: relative;
+  background: rgba($color: $theme, $alpha: 0.1);
+  &::after {
+    position: absolute;
+    content: '';
+    bottom: 0.25rem;
+    left: 0.25rem;
+    width: calc(50% - 0.25rem);
+    border-radius: 2rem;
+    height: calc(100% - 0.5rem);
+    transition: all ease-in-out 0.3s;
+    background: $theme;
+  }
+  &.active::after {
+    left: 50%;
+  }
+}
+
+.text {
+  transition: all ease 0.5s;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 0.35rem 1.125rem;
+  z-index: 10000;
+  text-align: center;
+}

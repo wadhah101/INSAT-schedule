@@ -1,5 +1,6 @@
 import React from 'react'
 import { TimeTableData } from '../../../../models/scholSession.full.model'
+import { WeekContext } from '../../../../pages/_app'
 import TimeTable from '../TimeTable'
 import styles from './style.module.scss'
 
@@ -8,11 +9,13 @@ interface Props {
   B: TimeTableData[]
 }
 
-const TimeTableContainer: React.FunctionComponent<Props> = ({ A }) => {
+const TimeTableContainer: React.FunctionComponent<Props> = ({ A, B }) => {
+  const { week } = React.useContext(WeekContext)
+
   return (
     <div className={styles.wrapper}>
       <div className={styles.baseContainer}>
-        <TimeTable data={A} />
+        <TimeTable data={week === 'A' ? A : B} />
       </div>
     </div>
   )

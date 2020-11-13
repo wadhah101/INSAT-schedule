@@ -1,6 +1,7 @@
 import clsx from 'clsx'
 import Link from 'next/link'
 import * as React from 'react'
+import ABswitcher from './ABswitcher'
 import styles from './style.module.scss'
 
 const Header: React.FunctionComponent = () => {
@@ -12,6 +13,8 @@ const Header: React.FunctionComponent = () => {
             <img className={styles.logo} src="/icons/icon.svg" />
           </a>
         </Link>
+        <div style={{ flex: 1 }} />
+        <ABswitcher />
       </div>
     </header>
   )
