@@ -15,7 +15,7 @@
     "type-check": "tsc --pretty --noEmit",
     "format": "prettier --write .",
     "serve": "serve -S out -l 3000",
-    "prod": "next build && next start",
+    "prod": "yarn build && yarn start",
     "lint-eslint": "eslint . --ext ts --ext tsx",
     "lint": "yarn type-check && yarn lint-eslint"
   },

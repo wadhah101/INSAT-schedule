@@ -1,0 +1,33 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "CreateField",
+      "model": "SchoolTime",
+      "field": "start_hour",
+      "type": "Int",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolTime",
+      "field": "start_minute",
+      "type": "Int",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolTime",
+      "field": "end_hour",
+      "type": "Int",
+      "arity": "Optional"
+    },
+    {
+      "tag": "CreateField",
+      "model": "SchoolTime",
+      "field": "end_minute",
+      "type": "Int",
+      "arity": "Optional"
+    }
+  ]
+}

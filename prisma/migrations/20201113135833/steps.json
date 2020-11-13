@@ -1,0 +1,25 @@
+{
+  "version": "0.3.14-fixed",
+  "steps": [
+    {
+      "tag": "DeleteField",
+      "model": "SchoolTime",
+      "field": "start_hour"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "SchoolTime",
+      "field": "start_minute"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "SchoolTime",
+      "field": "end_hour"
+    },
+    {
+      "tag": "DeleteField",
+      "model": "SchoolTime",
+      "field": "end_minute"
+    }
+  ]
+}

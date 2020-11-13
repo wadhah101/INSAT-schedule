@@ -5,10 +5,7 @@ import styled, { css } from 'styled-components'
 import { SchoolSessionPureData } from '../../../../models/scholSession.full.model'
 import dayjs, { Dayjs } from 'dayjs'
 import utc from 'dayjs/plugin/utc'
-import timezone from 'dayjs/plugin/timezone'
 dayjs.extend(utc)
-dayjs.extend(timezone)
-dayjs.tz.setDefault('Africa/Tunis')
 
 interface ISessionCompProps {
   data: SchoolSessionPureData
@@ -41,8 +38,8 @@ const colorFactory = (s: SchoolSessionPureData) =>
   `#${md5(`${s.subject.name}`).slice(0, 6)}`
 
 const positionFactory = (startTime: Dayjs, endTime: Dayjs) => {
-  const start = (startTime.hour() - 8) * 4 + startTime.minute() / 15
-  const end = (endTime.hour() - 8) * 4 + endTime.minute() / 15
+  const start = (startTime.utc().hour() - 7) * 4 + startTime.minute() / 15
+  const end = (endTime.utc().hour() - 7) * 4 + endTime.minute() / 15
   return { start, end }
 }
 

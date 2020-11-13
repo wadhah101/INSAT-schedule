@@ -1,0 +1,81 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "postgresql"
+  url = "***"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Professor {
+  id            Int             @id @default(autoincrement())
+  name          String          @unique
+  SchoolSession SchoolSession[]
+}
+
+model WeekDay {
+  id         Int          @id @default(autoincrement())
+  name       String       @unique
+  schoolTime SchoolTime[]
+}
+
+model Filiere {
+  id           Int                @id @default(autoincrement())
+  abbreviation String
+  name         String
+  levels       FiliereWithLevel[]
+}
+
+model FiliereWithLevel {
+  id         Int       @id @default(autoincrement())
+  filiere    Filiere   @relation(fields: [filiereId], references: [id])
+  filiereId  Int
+  level      Int
+  groupCount Int       @default(2)
+  subject    Subject[]
+}
+
+model Subject {
+  id                 Int              @id @default(autoincrement())
+  name               String
+  filiereWithLevel   FiliereWithLevel @relation(fields: [filiereWithLevelId], references: [id])
+  filiereWithLevelId Int
+  SchoolSession      SchoolSession[]
+  color              String?
+}
+
+model SchoolTime {
+  id              Int            @id @default(autoincrement())
+  day             WeekDay        @relation(fields: [dayId], references: [id])
+  dayId           Int
+  start           DateTime
+  start_hour      Int?
+  start_minute    Int?
+  end_hour        Int?
+  end_minute      Int?
+  end             DateTime
+  group           Int?
+  week            String?
+  SchoolSession   SchoolSession? @relation(fields: [schoolSessionId], references: [id])
+  schoolSessionId Int?
+}
+
+model SessionType {
+  id            Int             @id @default(autoincrement())
+  name          String
+  SchoolSession SchoolSession[]
+}
+
+model SchoolSession {
+  id            Int          @id @default(autoincrement())
+  SchoolTime    SchoolTime[]
+  subject       Subject      @relation(fields: [subjectId], references: [id])
+  Professor     Professor    @relation(fields: [professorId], references: [id])
+  subjectId     Int
+  professorId   Int
+  sessionType   SessionType  @relation(fields: [sessionTypeId], references: [id])
+  sessionTypeId Int
+}
