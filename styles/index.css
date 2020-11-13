@@ -1,7 +1,5 @@
-@import './reset.css';
-@import '../fonts/work-sans/index.css';
 @import '../fonts/poppins/index.css';
-
+@import './tailwind.css';
 html {
   font-family: 'Poppins', sans-serif;
 }
