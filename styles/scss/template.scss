@@ -21,6 +21,8 @@
 }
 
 .basePage {
+  display: flex;
+  flex-direction: column;
   min-height: 100vh;
   background: #fff;
   padding-top: 5rem;

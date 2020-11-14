@@ -3,23 +3,16 @@ import React from 'react'
 import BasePage from '../components/shared/BasePage'
 import { GetStaticProps } from 'next'
 import { PrismaClient } from '@prisma/client'
-import Link from 'next/link'
-import styles from '../styles/home.module.scss'
-
-// TODO interface for adding  easily
+import Banner from '../components/pages/home/Banner'
 
 interface Props {
-  data: { name: string }[]
+  data: string[]
 }
 
 export const Home: NextPage<Props> = ({ data }) => {
   return (
     <BasePage>
-      {data.map((e) => (
-        <Link passHref key={e.name} href={`/schedule/${e.name}`}>
-          <a className={styles.linkButton}> {e.name} </a>
-        </Link>
-      ))}
+      <Banner names={data} />
     </BasePage>
   )
 }
@@ -31,9 +24,9 @@ export const getStaticProps: GetStaticProps<Props> = async () => {
   })
 
   const data = _data.flatMap((e) =>
-    new Array(e.groupCount).fill(0).map((_, ind) => ({
-      name: `${e.filiere.abbreviation}-${e.level}-${ind + 1}`,
-    }))
+    new Array(e.groupCount)
+      .fill(0)
+      .map((_, ind) => `${e.filiere.abbreviation}-${e.level}-${ind + 1}`)
   )
 
   return {

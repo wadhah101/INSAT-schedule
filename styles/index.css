@@ -1,11 +1,18 @@
 @import '../fonts/poppins/index.css';
-@import './tailwind.css';
 html {
   font-family: 'Poppins', sans-serif;
 }
 
-@import url(https://fonts.googleapis.com/css?family=Sansita+Swashed:300,regular,500,600,700,800,900);
+@tailwind base;
 
-.k {
-  font-family: 'Sansita Swashed', Courier, monospace;
-}
+/* Write your own custom base styles here */
+
+/* Start purging... */
+@tailwind components;
+/* Stop purging. */
+
+/* Start purging... */
+@tailwind utilities;
+/* Stop purging. */
+
+/* Your own custom utilities */
