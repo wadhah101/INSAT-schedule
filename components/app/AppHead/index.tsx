@@ -16,6 +16,7 @@ const AppHead: React.FunctionComponent = () => {
       <meta name="description" content={APP_DESCRIPTION} />
       <meta name="format-detection" content="telephone=no" />
       <meta name="mobile-web-app-capable" content="yes" />
+      <meta property="og:image" content="/thumbnail.jpg" />
       <meta
         name="author"
         content="Wadhah Mahrouk https://www.linkedin.com/in/wadhah-mahroug-392a40184/"
