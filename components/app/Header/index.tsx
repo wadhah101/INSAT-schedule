@@ -9,8 +9,12 @@ const Header: React.FunctionComponent = () => {
     <header className={styles.header}>
       <div className={clsx(styles.baseContainer, styles.container)}>
         <Link href="/" passHref>
-          <a>
-            <img className={styles.logo} src="/icons/icon.svg" />
+          <a title="Home page">
+            <img
+              alt="website logo"
+              className={styles.logo}
+              src="/icons/icon.svg"
+            />
           </a>
         </Link>
         <div style={{ flex: 1 }} />
