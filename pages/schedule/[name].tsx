@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client'
 import { GetStaticPaths, GetStaticProps, NextPage } from 'next'
 import React from 'react'
 import TimeTableContainer from '../../components/pages/schedule/TimeTableContainer'
-import BasePage from '../../components/shared/BasePage'
+import BasePage from '../../components/shared/BasePage/BasePage'
 import { getSchedule } from '../../lib/functions.utils'
 import { TimeTableData } from '../../models/scholSession.full.model'
 

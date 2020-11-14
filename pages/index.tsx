@@ -1,6 +1,6 @@
 import { NextPage } from 'next'
 import React from 'react'
-import BasePage from '../components/shared/BasePage'
+import BasePage from '../components/shared/BasePage/BasePage'
 import { GetStaticProps } from 'next'
 import { PrismaClient } from '@prisma/client'
 import Banner from '../components/pages/home/Banner'

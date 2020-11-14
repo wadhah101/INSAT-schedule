@@ -1,5 +1,5 @@
 import * as React from 'react'
-import styles from './basePage.module.scss'
+import styles from './style.module.scss'
 import clsx from 'clsx'
 
 const BasePage: React.FunctionComponent<{

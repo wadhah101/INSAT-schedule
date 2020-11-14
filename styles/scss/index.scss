@@ -1,4 +1,12 @@
 @import './shared.scss';
+@import '../../fonts/poppins/index.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: 'Poppins', sans-serif;
+}
 
 html {
   font-size: 16px;

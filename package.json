@@ -37,8 +37,6 @@
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-icons": "^3.11.0",
-    "react-player": "^2.6.2",
-    "react-portal": "^4.2.1",
     "sass": "^1.29.0",
     "styled-components": "^5.2.1",
     "use-analytics": "^0.0.5"

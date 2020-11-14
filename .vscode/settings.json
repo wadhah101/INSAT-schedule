@@ -1,13 +1,3 @@
 {
-    "typescript.tsdk": "node_modules/typescript/lib",
-    "sqltools.connections": [
-        {
-            "previewLimit": 50,
-            "driver": "SQLite",
-            "database": "${workspaceFolder:Schedule}/prisma/dev.db",
-            "name": "db",
-            "group": "db"
-        }
-    ],
-    "sqltools.useNodeRuntime": true
+  "typescript.tsdk": "node_modules/typescript/lib"
 }

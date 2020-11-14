@@ -1,4 +1,3 @@
-import '../styles/index.css'
 import type { AppProps } from 'next/app'
 import { AnalyticsProvider } from 'use-analytics'
 import { defaultAnalytics } from '../lib/analytics'
@@ -30,5 +29,3 @@ const MyApp: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
 }
 
 export default MyApp
-
-export const placeholder = `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repellendus quaerat in iste ad sit odit alias fugiat cum doloribus aperiam, unde numquam quod laboriosam. Ex provident nemo modi magni necessitatibus?`
