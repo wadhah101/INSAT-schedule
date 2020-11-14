@@ -13,12 +13,14 @@
   font-family: 'Source serif pro', 'Times New Roman', Times, serif;
   font-weight: 800;
   text-align: center;
-  font-size: 8rem;
+  font-size: 18vw;
   color: #000000;
   line-height: 100%;
-}
+  @include md {
+    font-size: 7rem;
+  }
 
-.writing {
-  width: 70%;
-  text-align: center;
+  @include xl {
+    font-size: 8rem;
+  }
 }
