@@ -28,6 +28,7 @@ $borderColor: 1px solid
 }
 
 .items {
+  flex: 1;
   width: calc(100vw - 2rem);
   display: grid;
   grid-auto-flow: column dense;
@@ -37,7 +38,7 @@ $borderColor: 1px solid
     width: auto;
     overflow-x: auto;
     gap: 0;
-    grid-template-rows: repeat(40, minmax(1.25rem, 1fr));
+    grid-template-rows: repeat(40, minmax(1.3rem, 1fr));
   }
 }
 

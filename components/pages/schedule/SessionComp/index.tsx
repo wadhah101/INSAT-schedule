@@ -30,6 +30,8 @@ const Wrapper = styled.li<{ time: { start: number; end: number } }>`
   ${({ time }) => css`
     @media (min-width: 768px) {
       grid-row: ${time.start + 1} / ${time.end + 1};
+      padding-top: ${time.start === 0 ? '0.5rem' : null};
+      padding-bottom: ${time.end === 40 ? '0.5rem' : null};
     }
   `}
 `

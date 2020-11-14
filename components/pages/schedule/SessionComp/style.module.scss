@@ -7,7 +7,7 @@ $transitionDuartion: 0.5s;
   font-weight: 500;
   min-width: 16rem;
   @include md {
-    padding: 0.25rem 0.5rem;
+    padding: 0 0.5rem;
     min-width: auto;
   }
   * {
