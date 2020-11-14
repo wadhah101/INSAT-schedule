@@ -3,3 +3,9 @@
 html {
   font-family: 'Poppins', sans-serif;
 }
+
+@import url(https://fonts.googleapis.com/css?family=Sansita+Swashed:300,regular,500,600,700,800,900);
+
+.k {
+  font-family: 'Sansita Swashed', Courier, monospace;
+}

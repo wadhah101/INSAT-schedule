@@ -15,7 +15,7 @@ const ABswitcher: React.FunctionComponent = () => {
       className={clsx(
         styles.container,
         { [styles.active]: week === 'A' },
-        'shadow-sm'
+        'shadow-sm k'
       )}
     >
       <p className={styles.text}> A </p>

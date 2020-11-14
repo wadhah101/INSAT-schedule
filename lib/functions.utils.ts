@@ -47,6 +47,7 @@ export const getSchedule = (prisma: PrismaClient) => async (
     .flatMap(transformer)
     .filter((el) => (el.time.group ? el.time.group === group : true))
     .filter((el) => (el.time.week ? el.time.week === week : true))
+    .sort((a, b) => a.time.start - b.time.start)
 
   const timeTableData: TimeTableData[] = days.map((e) => ({
     day: e,
