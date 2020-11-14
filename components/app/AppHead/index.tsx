@@ -27,7 +27,7 @@ const AppHead: React.FunctionComponent = () => {
         content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no, viewport-fit=cover"
       />
 
-      <link rel="apple-touch-icon" sizes="any" href="/icons/icon.svg" />
+      <link rel="apple-touch-icon" sizes="any" href="/icons/icon512.png" />
       <link rel="manifest" href="/manifest.json" />
       <link rel="shortcut icon" href="/icons/icon.svg" />
     </Head>
