@@ -2,12 +2,19 @@ import clsx from 'clsx'
 import * as React from 'react'
 import { WeekContext } from '../../../../pages/_app'
 import styles from './style.module.scss'
-
-// 1 for 'A'
-// 0 for 'B
+import duration from 'dayjs/plugin/duration'
+import dayjs from 'dayjs'
+dayjs.extend(duration)
 
 const ABswitcher: React.FunctionComponent = () => {
   const { week, setWeek } = React.useContext(WeekContext)
+
+  React.useEffect(() => {
+    const current = dayjs()
+    const weekA = '2020-11-14T00:00:00'
+    const duration = dayjs.duration(current.diff(weekA))
+    if (duration.weeks()) setWeek('B')
+  }, [])
 
   return (
     <div

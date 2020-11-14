@@ -6,9 +6,11 @@ import AppHead from '../components/app/AppHead'
 import '../styles/scss/index.scss'
 import Header from '../components/app/Header'
 
+export type WeekType = 'A' | 'B'
+
 interface GlobalState {
   week: string
-  setWeek: React.Dispatch<React.SetStateAction<string>>
+  setWeek: React.Dispatch<React.SetStateAction<WeekType>>
 }
 
 export const WeekContext = React.createContext<GlobalState>({
@@ -16,7 +18,7 @@ export const WeekContext = React.createContext<GlobalState>({
   setWeek: () => null,
 })
 const MyApp: React.FunctionComponent<AppProps> = ({ Component, pageProps }) => {
-  const [week, setWeek] = useState('A')
+  const [week, setWeek] = useState<WeekType>('A')
   return (
     <AnalyticsProvider instance={defaultAnalytics}>
       <WeekContext.Provider value={{ week, setWeek }}>
