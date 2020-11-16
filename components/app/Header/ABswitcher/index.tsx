@@ -11,7 +11,7 @@ const ABswitcher: React.FunctionComponent = () => {
 
   React.useEffect(() => {
     const current = dayjs()
-    const weekA = '2020-11-14T00:00:00'
+    const weekA = '2020-11-08T00:00:00'
     const duration = dayjs.duration(current.diff(weekA))
     if (duration.weeks() % 2) setWeek('B')
   }, [])

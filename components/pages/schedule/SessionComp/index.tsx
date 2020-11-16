@@ -46,7 +46,7 @@ const positionFactory = (startTime: Dayjs, endTime: Dayjs) => {
 }
 
 const SessionComp: React.FunctionComponent<ISessionCompProps> = ({ data }) => {
-  const temp = {
+  const dataWithDayjs = {
     ...data,
     time: {
       ...data.time,
@@ -56,19 +56,20 @@ const SessionComp: React.FunctionComponent<ISessionCompProps> = ({ data }) => {
   }
   return (
     <Wrapper
-      time={positionFactory(temp.time.start, temp.time.end)}
+      time={positionFactory(dataWithDayjs.time.start, dataWithDayjs.time.end)}
       className={styles.wrapper}
     >
       <Content
-        color={temp.subject.color ?? colorFactory(data)}
+        color={dataWithDayjs.subject.color ?? colorFactory(data)}
         className={styles.content}
       >
         <p className="time">
-          {temp.time.start.format('HH:mm')} - {temp.time.end.format('HH:mm')}
+          {dataWithDayjs.time.start.format('HH:mm')} -{' '}
+          {dataWithDayjs.time.end.format('HH:mm')}
         </p>
         <h3 className={styles.name}>{data.subject.name}</h3>
         <div className={styles.spacer} />
-        <p className="font-medium text-sm text-right">
+        <p className="text-sm font-medium text-right">
           {data.sessionType.name}
         </p>
       </Content>
