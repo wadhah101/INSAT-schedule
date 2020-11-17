@@ -3,7 +3,7 @@
 .baseContainer {
   max-width: 1600px;
   margin: auto;
-  padding: 0rem 1rem;
+  padding: 0rem 0.75rem;
   @include md {
     padding: 0rem 1.5rem;
   }
